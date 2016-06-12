@@ -36,7 +36,8 @@ public class Server implements Runnable{
         try {
             // Detect server ip
             InetAddress IP = InetAddress.getLocalHost();
-            textArea.setText("IP of my system is :"+IP.getHostAddress() + "\n" + "Waitting to connect......");
+            textArea.setText("IP of my system is:"+ " " + IP.getHostAddress() + "\n");
+			textArea.setText("Waitting for client to connect...");
 
             // Create server socket
             servSock = new ServerSocket(2000);
@@ -63,7 +64,6 @@ public class Server implements Runnable{
                 InputStream in = clntSock.getInputStream();
 
                 System.out.println("Connected");
-                textArea.setText("Connected!!");
 
                 // Transfer data
                 byte[] b = new byte[1024];
