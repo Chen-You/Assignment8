@@ -13,11 +13,6 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    /** Init Variable for Page 1 **/
-    //Thread thread;
-    //Socket clientSocket;        //server socket
-    //OutputStream bw;
-
 
     EditText inputServerIp;
     Button btnok;
@@ -134,8 +129,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //send message to server
         ansToString = new String("The result from App is " + num1 + " " + oper + " " + num2 + " = " + result);
 
-        Thread t = new thread();
-        t.start();
+		//thread to start
+        Thread client = new thread();
+        client.start();
 
         //TODO: Pass the result String to jumpToResultLayout() and show the result at Result view
         jumpToResultLayout("ANS is :" + "　" + num1 + oper + num2 + "=" + result);
